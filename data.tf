@@ -4,7 +4,7 @@ data "aws_vpc" "vpc" {
     values = [var.vpc_name]
   }
 }
-data "aws_subnets" "subnets" {
+data "aws_subnet" "subnet" {
   filter {
     name   = "tag:Name"
     values = [var.public_subnet_name]

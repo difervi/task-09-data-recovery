@@ -1,19 +1,19 @@
 data "aws_vpc" "vpc" {
   filter {
     name   = "tag:Name"
-    values = ["cmtr-uad9vkoz-vpc"]
+    values = [var.vpc_name]
   }
 }
 data "aws_subnets" "subnets" {
   filter {
     name   = "tag:Name"
-    values = ["cmtr-uad9vkoz-public-subnet-1"]
+    values = [var.public_subnet_name]
   }
 }
 data "aws_security_group" "SG" {
   filter {
     name   = "tag:Name"
-    values = ["cmtr-uad9vkoz-sg"]
+    values = [var.security_group_name]
   }
 }
 data "aws_ami" "latest_amazon_linux" {

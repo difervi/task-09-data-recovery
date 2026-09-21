@@ -4,6 +4,7 @@ resource "aws_instance" "cmtr-uad9vkoz-instance" {
   security_groups = [data.aws_security_group.SG.id]
   instance_type   = "t3.micro"
   tags = {
+    Name    = "cmtr-uad9vkoz-instance"
     Project = var.project_id
   }
 }
